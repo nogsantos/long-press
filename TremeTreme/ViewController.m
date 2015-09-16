@@ -9,24 +9,23 @@
 #import "ViewController.h"
 #import "TremeTremeView.h"
 
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
-
+/**
+ * Criação dos elementos na tela.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     /*
-     *
+     * Cor de fundo
      */
     self.view.backgroundColor = [UIColor whiteColor];
     /*
-     *
+     * Criação das views na tela.
      */
-    [self criaTremeTremeView:CGPointMake(50, 50) comCor:[UIColor blackColor]];
+    [self criaTremeTremeView:CGPointMake(50, 80) comCor:[UIColor blackColor]];
     [self criaTremeTremeView:CGPointMake(200, 150) comCor:[UIColor blueColor]];
     [self criaTremeTremeView:CGPointMake(110, 250) comCor:[UIColor greenColor]];
+    [self criaTremeTremeView:CGPointMake(40, 470) comCor:[UIColor purpleColor]];
 }
 
 - (void)didReceiveMemoryWarning {

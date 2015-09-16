@@ -47,24 +47,60 @@
  * Registra e define os gestos da view
  */
 -(void) registraGestos{
+//    /*
+//     * Define o gesto de toque longo
+//     */
+//    UILongPressGestureRecognizer *toqueLongo = [[UILongPressGestureRecognizer alloc]
+//                                                initWithTarget : self
+//                                                action         : @selector(iniciaTremedeira)
+//                                                ];
+//    /*
+//     * Registra a duração do toque para iniciar a ação.
+//     */
+//    toqueLongo.minimumPressDuration = 0.3;
+//    [self addGestureRecognizer:toqueLongo];
+    
     /*
-     * Define o gesto de toque longo
+     * Define o gestro de toque para iniciar, no caso, um toque duplo.
      */
-    UILongPressGestureRecognizer *toqueLongo = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(iniciaTremedeira:)];
-    /*
-     * Registra a duração do toque para iniciar a ação.
-     */
-    toqueLongo.minimumPressDuration = 0.3;
-    [self addGestureRecognizer:toqueLongo];
-    /*
-     * Define o gestro de toque para parar, no caso, um toque duplo.
-     */
-    UITapGestureRecognizer *toqueParar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pararAnimacao)];
+    UITapGestureRecognizer *toqueLongo = [[UITapGestureRecognizer alloc]
+                                          initWithTarget : self
+                                          action         : @selector(iniciaTremedeira)
+                                          ];
     /*
      * Registra a quantidade de toques
      */
-    toqueParar.numberOfTapsRequired = 2;
+    toqueLongo.numberOfTapsRequired = 2;
+    [self addGestureRecognizer:toqueLongo];
+
+//    /*
+//     * Define o gestro de toque para parar, no caso, um toque duplo.
+//     */
+//    UITapGestureRecognizer *toqueParar = [[UITapGestureRecognizer alloc]
+//                                          initWithTarget : self
+//                                          action         : @selector(pararAnimacao)
+//                                          ];
+//    /*
+//     * Registra a quantidade de toques
+//     */
+//    toqueParar.numberOfTapsRequired = 3;
+//    [self addGestureRecognizer:toqueParar];
+    
+    /*
+     * Define o gesto de toque longo
+     */
+    UILongPressGestureRecognizer *toqueParar = [[UILongPressGestureRecognizer alloc]
+                                                    initWithTarget : self
+                                                    action         : @selector(pararAnimacao)
+                                                    ];
+    /*
+     * Registra a duração do toque para iniciar a ação.
+     */
+    toqueParar.minimumPressDuration = 0.3;
     [self addGestureRecognizer:toqueParar];
+    
+    
+    
 }
 /**
  * O método depende da importação do QuartzCore para ter acesso a propriedade layer.
@@ -81,7 +117,22 @@
 /**
  * Método para iniciar a tremedeira
  */
--(void) iniciaTremedeira:(UIGestureRecognizer *) gesto{
+-(void) iniciaTremedeira{
+    /*
+     * Confirma se deve iniciar o movimento
+     */
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle     : @"Devo vibrar?"
+                          message           : nil
+                          delegate          : self
+                          cancelButtonTitle : @"Não"
+                          otherButtonTitles : @"Sim", nil];
+    [alert show];
+}
+/**
+ * Ação do tremeview
+ */
+-(void) doTremeView{
     /*
      * Faz a view girar rapidamente para a esquerda
      * Aplicação da propriedade transform da própria view
@@ -99,7 +150,10 @@
     /*
      * Opções para a animção
      */
-    UIViewAnimationOptions opcoes = UIViewAnimationOptionRepeat | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionAutoreverse | UIViewAnimationOptionCurveEaseInOut;
+    UIViewAnimationOptions opcoes = UIViewAnimationOptionRepeat               |
+    UIViewAnimationOptionAllowUserInteraction |
+    UIViewAnimationOptionAutoreverse          |
+    UIViewAnimationOptionCurveEaseInOut;
     /*
      * Cria e inicia a animação
      */
@@ -110,7 +164,7 @@
         animations:^{
             self.transform = oscilaDireita;
         } completion:nil
-    ];
+     ];
 }
 /**
  * Método para parar a animação
@@ -128,7 +182,15 @@
             self.transform = CGAffineTransformIdentity;
         } completion:nil
     ];
+}
+/**
+ * Confirma
+ */
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger) buttonIndex{
     
+    if (buttonIndex == 1) {
+        [self doTremeView];
+    }
 }
 @end
 
