@@ -14,6 +14,8 @@
 		61EEE9B71BA9ABC8002F8B2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61EEE9B61BA9ABC8002F8B2C /* Images.xcassets */; };
 		61EEE9BA1BA9ABC8002F8B2C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61EEE9B81BA9ABC8002F8B2C /* LaunchScreen.xib */; };
 		61EEE9C61BA9ABC8002F8B2C /* TremeTremeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EEE9C51BA9ABC8002F8B2C /* TremeTremeTests.m */; };
+		61EEE9D01BA9ABE6002F8B2C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 61EEE9CF1BA9ABE6002F8B2C /* README.md */; };
+		61EEE9D31BA9AC64002F8B2C /* TremeTremeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EEE9D21BA9AC64002F8B2C /* TremeTremeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		61EEE9BF1BA9ABC8002F8B2C /* TremeTremeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TremeTremeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61EEE9C41BA9ABC8002F8B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61EEE9C51BA9ABC8002F8B2C /* TremeTremeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TremeTremeTests.m; sourceTree = "<group>"; };
+		61EEE9CF1BA9ABE6002F8B2C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		61EEE9D11BA9AC64002F8B2C /* TremeTremeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TremeTremeView.h; sourceTree = "<group>"; };
+		61EEE9D21BA9AC64002F8B2C /* TremeTremeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TremeTremeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 		61EEE99D1BA9ABC8002F8B2C = {
 			isa = PBXGroup;
 			children = (
+				61EEE9CF1BA9ABE6002F8B2C /* README.md */,
 				61EEE9A81BA9ABC8002F8B2C /* TremeTreme */,
 				61EEE9C21BA9ABC8002F8B2C /* TremeTremeTests */,
 				61EEE9A71BA9ABC8002F8B2C /* Products */,
@@ -89,6 +95,8 @@
 				61EEE9B61BA9ABC8002F8B2C /* Images.xcassets */,
 				61EEE9B81BA9ABC8002F8B2C /* LaunchScreen.xib */,
 				61EEE9A91BA9ABC8002F8B2C /* Supporting Files */,
+				61EEE9D11BA9AC64002F8B2C /* TremeTremeView.h */,
+				61EEE9D21BA9AC64002F8B2C /* TremeTremeView.m */,
 			);
 			path = TremeTreme;
 			sourceTree = "<group>";
@@ -221,6 +229,8 @@
 			files = (
 				61EEE9B21BA9ABC8002F8B2C /* ViewController.m in Sources */,
 				61EEE9AF1BA9ABC8002F8B2C /* AppDelegate.m in Sources */,
+				61EEE9D31BA9AC64002F8B2C /* TremeTremeView.m in Sources */,
+				61EEE9D01BA9ABE6002F8B2C /* README.md in Sources */,
 				61EEE9AC1BA9ABC8002F8B2C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
